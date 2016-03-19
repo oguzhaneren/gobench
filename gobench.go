@@ -266,6 +266,8 @@ func client(configuration *Configuration, result *Result, done *sync.WaitGroup) 
 			if len(configuration.authHeader) > 0 {
 				req.Header.Set("Authorization", configuration.authHeader)
 			}
+            
+            req.Header.Set("Content-Type","application/json")
 
 			req.SetBody(configuration.postData)
 
